@@ -34,9 +34,7 @@
                             <a class="test__link absolute inset-0" href="{{route('pin.show', ['id' => $pin->id])}}"></a>
                             <h1 class="test__title text-md font-bold mb-3">{{$pin->judulfoto}}</h1>
                         </div>
-                        <div class="mt-auto">
-                            <span class="test__tag bg-white bg-opacity-60 py-1 px-4 rounded-md text-black">Author</span>
-                        </div>
+                    
                     </div>
 
                 </div>
