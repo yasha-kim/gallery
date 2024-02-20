@@ -31,7 +31,7 @@
                 <img class="w-full rounded-full" src="images/{{$pin->path}}">
                     <div class="test__body absolute inset-0 p-8 text-white flex flex-col">
                         <div class="relative">
-                            <a class="test__link absolute inset-0" href="{{route('index')}}"></a>
+                            <a class="test__link absolute inset-0" href="{{route('pin.show', ['id' => $pin->id])}}"></a>
                             <h1 class="test__title text-md font-bold mb-3">{{$pin->judulfoto}}</h1>
                         </div>
                         <div class="mt-auto">

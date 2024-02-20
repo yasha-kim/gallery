@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/album', [AlbumController::class, 'index'])->name('album.index');
     Route::get('/profile', [AlbumController::class, 'store'])->name('store');
 
-    Route::get('/pin', [KomentarController::class, 'index'])->name('index');
+    Route::get('/pin/{id}', [PinController::class, 'show'])->name('pin.show');
 });
 
 require __DIR__.'/auth.php';

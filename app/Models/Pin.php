@@ -10,7 +10,7 @@ class Pin extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['judulfoto', 'deskripsifoto', 'image_url', 'albums_id', 'users_id'];
+    protected $fillable = ['judulfoto', 'deskripsifoto', 'path', 'albums_id', 'users_id'];
 
     public function album(): BelongsTo
     {
