@@ -66,14 +66,12 @@
 <div class="content1">
     <div class="card-header text-center border-0 pt-4 pt-lg-3 pb-4 pb-lg-3 px-4">
         <div class="d-flex justify-content-end">
-               
+
             <div class="dropdown dropleft">
-                <button class="btn btn-warning"
-                        type="button" id="dropdownMenu1" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        +
+                <button class="btn btn-warning" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding:4px 13px;">
+                       <i class="fa-solid fa-plus"></i>
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <div class="dropdown-menu">
                 <h6 class="dropdown-header">Create</h6>
                 <hr>
                     <a class="dropdown-item" role="button" data-toggle="modal" data-target="#exampleModal">Album</a>
@@ -121,18 +119,16 @@
         </div>
     </div>
 
-    <div class="columns-1 gap-4 space-y-4 p-4 sm:columns-2 md:columns-3 lg:columns-4">
+    <div class="columns-1 gap-2 space-y-4 p-4 sm:columns-2 md:columns-3 lg:columns-4">
         @foreach (App\Models\Pin::with('user')->get() as $pin) 
-        <div class="relative mb-4 before:content-[''] before:rounded-md before:absolute before:inset-0 before:bg-black before:bg-opacity-20">
+        <div class="relative mb-1 before:content-[''] before:rounded-md before:absolute before:inset-0 before:bg-black before:bg-opacity-20">
         <img class="w-full rounded-full" src="images/{{$pin->path}}">
             <div class="test__body absolute inset-0 p-8 text-white flex flex-col">
                 <div class="relative">
-                    <a class="test__link absolute inset-0" target="_blank" href="/"></a>
-                    <h1 class="test__title text-md font-bold mb-3 ">{{$pin->judulfoto}}</h1>
+                    <a class="test__link absolute inset-0" href="{{route('pin.show', ['id' => $pin->id])}}"></a>
+                    <h1 class="test__title text-md font-bold mb-2">{{$pin->judulfoto}}</h1>
                 </div>
-                <div class="mt-auto">
-                    <span class="test__tag bg-white bg-opacity-60 py-1 px-4 rounded-md text-black">Author</span>
-                </div>
+                
             </div>
 
         </div>

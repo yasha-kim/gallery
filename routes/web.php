@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PinController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\KomentarController;
+use App\Http\Controllers\LikeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +39,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [AlbumController::class, 'store'])->name('store');
 
     Route::get('/pin/{id}', [PinController::class, 'show'])->name('pin.show');
+
+    Route::POST('/like/{id}', [LikeController::class, 'like'])->name('like');
 });
 
 require __DIR__.'/auth.php';

@@ -44,8 +44,8 @@ class AlbumController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'nama_album' => 'required|max:10',
-            'deskripsi' => 'required|max:10',
+            'nama_album' => 'required',
+            'deskripsi' => 'required',
         ]);
 
         $albums = DB::table('albums')->insert([

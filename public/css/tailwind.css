@@ -576,7 +576,7 @@ video {
 }
 
 .columns-1{
-  columns: 1
+  columns: 2
 }
 
 .test__title {
@@ -587,14 +587,10 @@ video {
   flex-direction: column-reverse
 }
 
-.gap-4{
-  gap: 1rem
-}
-
 .space-y-4 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
-  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1rem * var(--tw-space-y-reverse))
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
 }
 
 .overflow-hidden{
@@ -647,7 +643,7 @@ video {
 }
 
 .text-md{
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .text-sm{
@@ -704,7 +700,7 @@ video {
 
 @media (min-width: 1024px){
   .lg\:columns-4{
-    columns: 4
+    columns: 5
   }
 }
 

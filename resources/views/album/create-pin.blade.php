@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="mb-3">
                     <label class=" col-label-form">Deskripsi Foto</label>
-                    <textarea class="form-control{{ $errors->has('deskripsifoto') ? ' is-invalid' : '' }}" name="deskripsifoto" placeholder="deskripsifoto" value="" > </textarea>
+                    <textarea class="form-control" name="deskripsifoto" placeholder="deskripsifoto" value="" > </textarea>
                 </div>
             </div>
             <div class="row mb-3">
