@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
 use Illuminate\View\View;
+use App\Models\Album;
 use Illuminate\Support\Facades\Storage;
 
 class AlbumController extends Controller
@@ -28,9 +29,10 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        $pins = DB::table('pins')->get();
+        return view('album.index');
+        // $pins = DB::table('pins')->get();
 
-        return view('album.index')->with('pins',$pins);
+        // return view('album.index')->with('pins',$pins);
     }
 
 
@@ -43,26 +45,29 @@ class AlbumController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'nama_album' => 'required',
-            'deskripsi' => 'required',
+        $album = Album::create([
+            'nama_album' => $request->nama_album,
+            'deskripsi' => $request->deskripsi,
+            'users_id' => \Auth::user()->id,
         ]);
 
-        $albums = DB::table('albums')->insert([
-        'nama_album' => $request->nama_album,
-        'deskripsi' => $request->deskripsi,
-        'users_id' => \Auth::user()->id,
-        ]);
+        // Generate a unique slug for the album name
+        $albumSlug = Str::slug($album->nama_album);
 
-        return redirect()->route('album.index')->with('message', 'Album Added');
+        // Redirect to the show route with the generated slug
+        return redirect()->route('album.show', ['albumSlug' => $albumSlug]);
 
     }
 
-    public function show(Request $request)
+    public function show($albumSlug)
     {
-        $pins = $albums->pins()->paginate(10);
+        // Retrieve the album using the slug
+        $album = Album::where('nama_album', Str::slug($albumSlug))->first();
 
-        return view('album.show', compact('albums', 'pins'));
+        // Add additional logic as needed
+
+        // Pass the album data to the view
+        return view('album.show', ['album' => $album]);
     }
 
     /**

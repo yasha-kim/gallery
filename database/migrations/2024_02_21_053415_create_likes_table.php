@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreign('pins_id')
             ->references('id')->on('pins')
             ->onDelete('cascade');
-            $table->date('tgl_like')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->date('tgl_like');
             $table->timestamps();
         });
     }

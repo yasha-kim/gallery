@@ -68,7 +68,7 @@
         <div class="d-flex justify-content-end">
 
             <div class="dropdown dropleft">
-                <button class="btn btn-warning" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding:4px 13px;">
+                <button class="btn btn-warning rounded-circle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding:4px 13px;">
                        <i class="fa-solid fa-plus"></i>
                 </button>
                 <div class="dropdown-menu">
@@ -107,7 +107,7 @@
                                 </div>
 
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-warning" style="font-size:18px;">Create</button>
+                                    <button type="submit" class="btn btn-warning rounded-pill" style="font-size:18px;">Create</button>
                                 </div>
                                 
                             </form>
@@ -122,8 +122,8 @@
     <div class="columns-1 gap-2 space-y-4 p-4 sm:columns-2 md:columns-3 lg:columns-4">
         @foreach (App\Models\Pin::with('user')->get() as $pin) 
         <div class="relative mb-1 before:content-[''] before:rounded-md before:absolute before:inset-0 before:bg-black before:bg-opacity-20">
-        <img class="w-full rounded-full" src="images/{{$pin->path}}">
-            <div class="test__body absolute inset-0 p-8 text-white flex flex-col">
+        <img class="w-full rounded-4" src="images/{{$pin->path}}">
+            <div class="test__body absolute inset-0 p-3 text-white flex flex-col">
                 <div class="relative">
                     <a class="test__link absolute inset-0" href="{{route('pin.show', ['id' => $pin->id])}}"></a>
                     <h1 class="test__title text-md font-bold mb-2">{{$pin->judulfoto}}</h1>

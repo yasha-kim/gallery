@@ -35,8 +35,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/create-pin', [PinController::class, 'create'])->name('create-pin');
     Route::post('/album', [PinController::class, 'store'])->name('pins.store');
     
-    Route::get('/album', [AlbumController::class, 'index'])->name('album.index');
-    Route::get('/profile', [AlbumController::class, 'store'])->name('store');
+    // Route::get('/album', [AlbumController::class, 'index'])->name('album.index');
+    // Route::get('/{albumSlug}', [AlbumController::class, 'show'])->name('album.show');
+    // Route::get('/profile', [AlbumController::class, 'store'])->name('store');
+
+    Route::get('/profile', [AlbumController::class, 'index'])->name('album.index');
+    Route::get('/album', [AlbumController::class, 'store'])->name('store');
+    Route::get('/{albumSlug}', [AlbumController::class, 'show'])->name('album.show');
 
     Route::get('/pin/{id}', [PinController::class, 'show'])->name('pin.show');
 

@@ -19,9 +19,8 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    
-    
-    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="./node_modules/preline/dist/preline.js"></script>
 </head>
 <body>
     <div id="app">
@@ -52,6 +51,7 @@
                 }
             });
         });
+
     </script>
     
 </body>
